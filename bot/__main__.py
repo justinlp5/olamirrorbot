@@ -87,7 +87,6 @@ def log(update, context):
 
 def bot_help(update, context):
     help_string_adm = f'''
-/{BotCommands.HelpCommand}: To get this message
 
 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive. Use /{BotCommands.MirrorCommand} qb to mirror with qBittorrent, and use /{BotCommands.MirrorCommand} qbs to select files before downloading
 
@@ -140,11 +139,11 @@ def bot_help(update, context):
 /{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
 
 /{BotCommands.TsHelpCommand}: Get help for Torrent search module
+
+/{BotCommands.HelpCommand}: To get this message
 '''
 
     help_string = f'''
-/{BotCommands.HelpCommand}: To get this message
-
 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive. Use /{BotCommands.MirrorCommand} qb to mirror with qBittorrent, and use /{BotCommands.MirrorCommand} qbs to select files before downloading
 
 /{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
@@ -172,6 +171,8 @@ def bot_help(update, context):
 /{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
 
 /{BotCommands.TsHelpCommand}: Get help for Torrent search module
+
+/{BotCommands.HelpCommand}: To get this message
 '''
 
     if CustomFilters.sudo_user(update) or CustomFilters.owner_filter(update):
@@ -181,7 +182,6 @@ def bot_help(update, context):
 
 
 botcmds = [
-        (f'{BotCommands.HelpCommand}','Get Detailed Help'),
         (f'{BotCommands.MirrorCommand}', 'Start Mirroring'),
         (f'{BotCommands.TarMirrorCommand}','Start mirroring and upload as .tar'),
         (f'{BotCommands.ZipMirrorCommand}','Start mirroring and upload as .zip'),
@@ -199,6 +199,7 @@ botcmds = [
         (f'{BotCommands.PingCommand}','Ping the Bot'),
         (f'{BotCommands.RestartCommand}','Restart the bot [owner/sudo only]'),
         (f'{BotCommands.LogCommand}','Get the Bot Log [owner/sudo only]'),
+        (f'{BotCommands.HelpCommand}','Get Detailed Help'),
         (f'{BotCommands.TsHelpCommand}','Get help for Torrent search module')
     ]
 
