@@ -382,8 +382,6 @@ class GoogleDriveHelper:
 
 
     def clone(self, link):
-        if ',' in link:
-            self.cloneFiles(link)
         global SERVICE_ACCOUNT_INDEX
         self.is_cloning = True
         self.start_time = time.time()
